@@ -4,10 +4,13 @@ import java.util.Set;
 
 public class Concessionaria {
   
-    private Concessionaria concessionaria;
     private String nome;
     private Set<Praca> praças;
     private Double totalRecebido;
+
+    public Concessionaria() {
+        this.totalRecebido = 0.0;
+    }
 
     public Concessionaria getConcessionaria() {
     	return this.concessionaria;
