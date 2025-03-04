@@ -1,22 +1,43 @@
 package modelo;
 
+
+import java.util.HashSet;
 import java.util.Set;
 
 public class Concessionaria {
   
     private String nome;
-    private Set<Praca> praças;
+    private Set<Praca> pracas = new HashSet();
     private Double totalRecebido;
-
-    public Concessionaria() {
-        this.totalRecebido = 0.0;
-    }
-
-    public Concessionaria getConcessionaria() {
-    	return this.concessionaria;
-    }
-    public void setConcessionaria(Concessionaria concessionaria) {
-    	this.concessionaria = concessionaria;
+    private Concessionaria concessionaria;
+   
+        
+            @SuppressWarnings("unused")
+            public Concessionaria (int i, int j) {
+                
+            }
+        
+            public Concessionaria (String nome) {
+                this.nome = nome;
+                this.totalRecebido = 0.0;
+                this.pracas = new HashSet();
+        }
+    
+        public Concessionaria(Double totalRecebido) {
+            this.totalRecebido = totalRecebido;
+        }
+    
+        public Concessionaria (String nome, int totalRecebido) {
+            this.nome = nome;
+            this.totalRecebido = (double) totalRecebido;
+        }
+    
+    
+        public Concessionaria getConcessionaria() {
+            return this.getConcessionaria();
+        }
+        public void setConcessionaria(Concessionaria concessionaria) {
+            this.concessionaria = concessionaria;
     }
 
 
@@ -28,11 +49,8 @@ public class Concessionaria {
     }
 
 
-    public Set<Praca> getPraças() {
-    	return this.praças;
-    }
-    public void setPraças(Set<Praca> praças) {
-    	this.praças = praças;
+    public Set<Praca> getPracas() {
+    	return this.pracas;
     }
 
 
@@ -43,4 +61,16 @@ public class Concessionaria {
     	this.totalRecebido = totalRecebido;
     }
 
+    public void adicionarPraca(Praca praca) {
+        this.pracas.add(praca);
+        this.totalRecebido = 0.0;
+        for(Praca p : this.pracas) {
+             this.totalRecebido = this.totalRecebido + p.getTotalRecebido();
+        }
+    }
+
+    public void limparPracas() {
+        this.pracas = new HashSet();
+        
+    }
 }
