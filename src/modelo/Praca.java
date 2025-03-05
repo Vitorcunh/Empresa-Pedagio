@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Set;
 
-public class Praca {
+public class Praca  {
   
   private String cidade;
   private Double totalRecebido; 

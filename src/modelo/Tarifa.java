@@ -1,6 +1,8 @@
 package modelo;
 
-public class Tarifa {
+import java.io.Serializable;
+
+public class Tarifa implements Serializable {
   
     private Categoria categoria;
 

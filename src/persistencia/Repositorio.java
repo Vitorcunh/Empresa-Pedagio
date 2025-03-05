@@ -15,13 +15,13 @@ public class Repositorio {
       objetoSaida.writeObject(concessionarias);
     }
 
-    
-
       public List ler() throws IOException, ClassNotFoundException {
         FileInputStream entradaArquivo = new FileInputStream("pedagio.dat");
         ObjectInputStream objetoEntrada = new ObjectInputStream(entradaArquivo);
         Object concessionarias = objetoEntrada.readObject();
         return (List) concessionarias;
       }
+
+      
 
 }

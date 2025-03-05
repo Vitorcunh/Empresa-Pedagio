@@ -1,10 +1,11 @@
 package modelo;
 
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Concessionaria {
+public class Concessionaria implements Serializable{
   
     private String nome;
     private Set<Praca> pracas = new HashSet();

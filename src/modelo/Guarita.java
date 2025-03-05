@@ -1,6 +1,8 @@
 package modelo;
 
-public class Guarita {
+import java.io.Serializable;
+
+public class Guarita implements Serializable {
 
     private int numero;
     private int veiculos;
